@@ -50,3 +50,52 @@ for (let i = 100; i <= 200; i++) {
     console.log(i);
     }
 }
+
+
+
+// Chessboard 
+/* 
+GOAL
+Write a program that creates a string that represents an 8×8 grid, 
+using newline characters to separate lines. At each position of the 
+grid there is either a space or a "#" character. The characters should 
+form a chessboard.
+
+Should show something like this:
+
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # #
+
+*/
+
+
+let chessboard = '' // variable string wil be assigned to
+let size = 12 // area of 'chessboard
+
+for (let l = 1; l <= size; l++) { // handles each line
+  for (let i = 1; i <= size; i++) { // handles each char w/in line
+  	if (l%2 !== 0){ // checks for line odd
+      if (i%2 !== 0){ // checks for character count odd
+          chessboard += " ";
+      } else {
+          chessboard += "#"
+      }
+    } else if  (l%2 === 0){ // checks for line even
+      if (i%2 !== 0){ // checks for character count even
+          chessboard += "#";
+      } else {
+          chessboard += " "
+      }
+    }
+  } 
+
+  chessboard += '\n' 
+
+}
+console.log(chessboard)
